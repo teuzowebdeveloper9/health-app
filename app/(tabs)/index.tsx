@@ -1,31 +1,25 @@
-import { StyleSheet } from 'react-native';
-
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
+import { Image, ImageBackground, View,Text  } from 'react-native';
+import { styles } from '../stylesheets/HomeStylesheets';
+import imageBackground from '../images/360_F_240635575_EJifwRAbKsVTDnA3QE0bCsWG5TLhUNEZ.jpg'
+import medical from '../images/download.png'
 
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
+      <ImageBackground style={styles.ImageBackground} source={imageBackground} >
+         <View style={styles.medical}>
+            <Image  source={medical} />
+         </View>       
+      </ImageBackground>
+      <View style={styles.lowView}>
+        <Text style={styles.welcomeText}>
+          walcome to health help
+        </Text>
+        <Text >
+          {"Only here you have everything to help your medical team"}
+        </Text>
+      </View>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-});
