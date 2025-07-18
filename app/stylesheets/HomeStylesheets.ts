@@ -9,18 +9,21 @@ export const styles = StyleSheet.create({
   ImageBackground : {
     flex:1,
     width : '100%',
-    height : '100%',
+    height : 400,
   },
   medical : {
     display : 'flex',
-    justifyContent : 'center',
-    alignItems : 'center',
-
+    position :'absolute',
+    top : 130,
+    left : 120
   },
   lowView : {
+    marginTop : 400,
     flex:0.45,
     width : '100%',
     minHeight : 500,  
+    backgroundColor : '#fff',
+    borderRadius : 20
   },
   welcomeText : {
     display : 'flex', 
@@ -34,7 +37,14 @@ export const styles = StyleSheet.create({
     fontSize : 18,
     paddingHorizontal : 10,
     paddingVertical : 10,
+    justifyContent : 'center',
     alignSelf : 'center',
     color : 'gray'
-  }
+  },
+   ViewButton : {
+    display : 'flex',
+    justifyContent : 'center',
+    alignItems : 'center',
+    marginTop : 35,
+   }
 });

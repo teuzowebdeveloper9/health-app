@@ -1,12 +1,14 @@
 import { ButtonProps } from "@/app/types/ButtonProps";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Pressable, Text, View } from "react-native";
+import { ButtonStylesheet } from "./ButtonStylesheets";
 
-export default function Button({label,onPress} : ButtonProps){
+export  function Button({label} : ButtonProps){
   return(
-    <TouchableOpacity onPress={onPress}>
-      <Text>
+    
+    <View  style={ButtonStylesheet.button}>
+      <Text style={ButtonStylesheet.Text}>
         {label}
       </Text>
-    </TouchableOpacity>
+    </View>
   )
 }
