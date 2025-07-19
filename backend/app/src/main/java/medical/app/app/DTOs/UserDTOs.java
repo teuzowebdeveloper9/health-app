@@ -1,4 +1,10 @@
 package medical.app.app.DTOs;
 
-public record UserDTOs() {
+import java.util.UUID;
+
+public record UserDTOs(
+    String name,
+    String email,
+    String password
+) {
 }

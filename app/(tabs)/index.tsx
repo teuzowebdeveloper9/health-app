@@ -3,6 +3,7 @@ import { styles } from '../stylesheets/HomeStylesheets';
 import imageBackground from '../images/360_F_240635575_EJifwRAbKsVTDnA3QE0bCsWG5TLhUNEZ.jpg'
 import medical from '../images/download.png'
 import { useState } from 'react';
+import LoginFormComponent from '../components/LoginForm/LoginForm'
 
 
 export default function TabOneScreen() {
@@ -27,7 +28,7 @@ export default function TabOneScreen() {
           {"login or sign in"}
         </Text>
         <View>
-        {login ? <Text style={{color : 'red', fontSize : 20}} onPress={polarity} >login</Text> : <Text style={{color : 'red'}} onPress={polarity}>sign in</Text>
+        {login ? <LoginFormComponent isLogin={false} onPress={polarity} /> : <LoginFormComponent isLogin={true} onPress={polarity} />
         }
       </View>
       </View>
