@@ -1,4 +1,7 @@
 package medical.app.app.DTOs;
 
-public record loginUserDto() {
+public record LoginUserDto(
+        String email,
+        String password
+) {
 }
