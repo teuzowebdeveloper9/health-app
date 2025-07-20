@@ -1,9 +1,9 @@
-import { Image, ImageBackground, View,Text, Pressable  } from 'react-native';
-import { styles } from '../stylesheets/HomeStylesheets';
-import imageBackground from '../images/360_F_240635575_EJifwRAbKsVTDnA3QE0bCsWG5TLhUNEZ.jpg'
-import medical from '../images/download.png'
+import { Image, ImageBackground, View,Text, Pressable, ScrollView  } from 'react-native';
+import { styles } from '../../stylesheets/HomeStylesheets';
+import imageBackground from '../../images/360_F_240635575_EJifwRAbKsVTDnA3QE0bCsWG5TLhUNEZ.jpg'
+import medical from '../../images/download.png'
 import { useState } from 'react';
-import LoginFormComponent from '../components/LoginForm/LoginForm'
+import LoginFormComponent from '../../components/LoginForm/LoginForm'
 
 
 export default function TabOneScreen() {
@@ -14,7 +14,7 @@ export default function TabOneScreen() {
   }
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <ImageBackground style={styles.ImageBackground} source={imageBackground} >
          <View style={styles.medical}>
             <Image   source={medical} />
@@ -30,9 +30,10 @@ export default function TabOneScreen() {
         <View>
         {login ? <LoginFormComponent isLogin={false} onPress={polarity} /> : <LoginFormComponent isLogin={true} onPress={polarity} />
         }
+
       </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 

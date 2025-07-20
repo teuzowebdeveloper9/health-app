@@ -29,7 +29,7 @@ export const LoginFormStylesheets = StyleSheet.create({
   PolarityText : {
      color : '#2522b6ff',
      fontSize : 15 ,
-     fontWeight : 'thin',
+     fontWeight : 'bold',
      marginBottom : 10
   }
   

@@ -67,6 +67,13 @@ public class UserServices {
       return users;
     }
 
+    public void deleteUser(UUID id){
+        UserEntity deletableUser = userRepositorie.findById(id)
+                .orElseThrow(() -> new RuntimeException("USER NOT FOUND"));
+
+        userRepositorie.delete(deletableUser);
+    }
+
 }
 
 
