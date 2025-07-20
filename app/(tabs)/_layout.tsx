@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, Tabs } from 'expo-router';
 import { Pressable } from 'react-native';
@@ -9,6 +9,7 @@ import { MdHealthAndSafety } from "react-icons/md";
 import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
 import { useClientOnlyValue } from '@/components/useClientOnlyValue';
+import { AuthContext } from '@/context/loginContext';
 
 // You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
 function TabBarIcon(props: {
@@ -20,6 +21,7 @@ function TabBarIcon(props: {
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
+  const {user } = useContext(AuthContext)
 
   return (
     <Tabs
@@ -50,13 +52,13 @@ export default function TabLayout() {
           ),
         }}
       />
-      <Tabs.Screen
+      {user ? <Tabs.Screen
         name="two"
         options={{
           title: 'Health',
           tabBarIcon: ({ color }) => <MdHealthAndSafety color={"#1E90FF"} />,
         }}
-      />
+      /> : null}
     </Tabs>
   );
 }

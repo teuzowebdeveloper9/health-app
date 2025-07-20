@@ -14,7 +14,10 @@ export const handleLogin = async ( email : string, password : string) => {
       password
     })
 
-    return response.data
+    return {
+      status : response.status,
+      data : response.data
+    }
   }
   catch(error){
      console.error(error) 

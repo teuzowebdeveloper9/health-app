@@ -1,12 +1,13 @@
 import {View,Text, TextInput, Pressable} from 'react-native'
 import {LoginFormProps} from '../../types/LoginFormProps'
 import { LoginFormStylesheets } from './LoginFormStylesheet'
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Button } from '../Button/Button';
 import { handleLogin } from '@/utils/handleLogin';
 import { handleSignin } from '@/utils/handleSignin';
 import {  useRouter } from 'expo-router';
 import { FontAwesome } from '@expo/vector-icons';
+import { AuthContext } from '@/context/loginContext';
 
 
 export default function LoginFormComponent({onPress,isLogin} : LoginFormProps){
@@ -30,6 +31,8 @@ export default function LoginFormComponent({onPress,isLogin} : LoginFormProps){
     const Polarity = () => {
       setIsPasswordVisible((prev) => !prev )
     }
+
+    const {signIn} = useContext(AuthContext)
 
   return(
     <View style={LoginFormStylesheets.container}>
@@ -73,13 +76,38 @@ export default function LoginFormComponent({onPress,isLogin} : LoginFormProps){
     if (isLogin) {
      const response = await handleLogin(form.email, form.password);
 
-     if(response.status == 200){
+     if(response?.status == 200){
+
+     const name = response?.data.name
+     const email = response?.data.email
+     const password = response?.data.password
+
+
+         signIn({
+      name,
+      email,
+      password
+     })
+
         Router.push('/two')
      }
     } else {
-      const response = await handleSignin(form.name, form.email, form.password);
+      const responseSignin = await handleSignin(form.name, form.email, form.password);
 
-      if(response.status == 201){
+     
+     
+
+      if(responseSignin?.status == 201){
+      const name = responseSignin?.data.name
+      const email = responseSignin?.data.email
+      const password = responseSignin?.data.email
+
+       signIn({
+       name,
+       email,
+       password
+      })
+
         Router.push('/two')
       }
     }
