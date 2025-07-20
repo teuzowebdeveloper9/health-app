@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class UserServices {
@@ -49,5 +50,23 @@ public class UserServices {
      return user;
     }
 
-    
+    public UserEntity editUser(UUID id, UserDTOs dto){
+
+        UserEntity existingUser = userRepositorie.findById(id)
+                .orElseThrow(() -> new RuntimeException("USER NOT FOUND"));
+
+        existingUser.setName(dto.name());
+        existingUser.setEmail(dto.email());
+        existingUser.setPassword(dto.password());
+
+        return userRepositorie.save(existingUser);
+    }
+    public List<UserEntity> findUserByName(String name){
+      List<UserEntity> users =  userRepositorie.findByNameContainingIgnoreCase(name);
+
+      return users;
+    }
+
 }
+
+
