@@ -17,6 +17,9 @@ export const SearchScreenStylesheet = StyleSheet.create({
   },
   SearchText : {
     fontWeight : 'bold',
-    color : 'black'
+    color : 'black',
+    height : 250,
+    width : 200
+    
   }
 })
