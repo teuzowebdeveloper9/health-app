@@ -3,6 +3,7 @@ import { NoLoginView } from "@/components/NoLogin/NoLoginComponents";
 import { AuthContext } from "@/context/loginContext";
 import { useRouter } from "expo-router";
 import { useContext } from "react";
+import { ScrollView } from "react-native";
 import { Text, View } from "react-native";
 
 
@@ -22,8 +23,9 @@ export default function TabTwoScreen() {
   }
 
   return (
-     <View style={{flex : 1,backgroundColor : 'white'}}>
+     <ScrollView style={{flex : 1,backgroundColor : 'white'}}>
       <Header />
-     </View>
+
+     </ScrollView>
   );
 }

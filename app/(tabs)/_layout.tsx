@@ -5,6 +5,7 @@ import { Pressable } from 'react-native';
 import { IoIosHome } from "react-icons/io";
 import { MdHealthAndSafety } from "react-icons/md";
 import { MdOutlinePrivateConnectivity } from "react-icons/md";
+import { FaSearch } from "react-icons/fa";
 
 
 import Colors from '@/constants/Colors';
@@ -61,6 +62,19 @@ export default function TabLayout() {
         }}
       /> : <Tabs.Screen
         name="two"
+        options={{
+          title: 'private',
+          tabBarIcon: ({ color }) => <MdOutlinePrivateConnectivity color={"red"} />,
+        }}
+      />}
+       {user ? <Tabs.Screen
+        name="search"
+        options={{
+          title: 'search',
+          tabBarIcon: ({ color }) => <FaSearch color='#1E90FF' /> ,
+        }}
+      /> : <Tabs.Screen
+        name="search"
         options={{
           title: 'private',
           tabBarIcon: ({ color }) => <MdOutlinePrivateConnectivity color={"red"} />,
