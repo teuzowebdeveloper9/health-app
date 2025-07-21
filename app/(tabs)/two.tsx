@@ -1,11 +1,29 @@
-import { View,Text  } from 'react-native'
+import { Header } from "@/components/Header/Header";
+import { NoLoginView } from "@/components/NoLogin/NoLoginComponents";
+import { AuthContext } from "@/context/loginContext";
+import { useRouter } from "expo-router";
+import { useContext } from "react";
+import { Text, View } from "react-native";
+
 
 export default function TabTwoScreen() {
-  
+  const Router = useRouter();
+  const { user, signOut } = useContext(AuthContext);
+
+  const handleLogout = async  () => {
+    signOut()
+    Router.replace('/')
+  }
+ 
+  if (user === null) {
+    return (
+       <NoLoginView />
+    ); 
+  }
 
   return (
-    <View>
-        <Text>oiiii</Text>
-    </View>
+     <View style={{flex : 1,backgroundColor : 'white'}}>
+      <Header />
+     </View>
   );
 }

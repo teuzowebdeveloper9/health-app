@@ -4,6 +4,7 @@ import { Link, Tabs } from 'expo-router';
 import { Pressable } from 'react-native';
 import { IoIosHome } from "react-icons/io";
 import { MdHealthAndSafety } from "react-icons/md";
+import { MdOutlinePrivateConnectivity } from "react-icons/md";
 
 
 import Colors from '@/constants/Colors';
@@ -58,7 +59,13 @@ export default function TabLayout() {
           title: 'Health',
           tabBarIcon: ({ color }) => <MdHealthAndSafety color={"#1E90FF"} />,
         }}
-      /> : null}
+      /> : <Tabs.Screen
+        name="two"
+        options={{
+          title: 'private',
+          tabBarIcon: ({ color }) => <MdOutlinePrivateConnectivity color={"red"} />,
+        }}
+      />}
     </Tabs>
-  );
+  ) ;
 }

@@ -31,11 +31,7 @@ export const AuthProvider = ({children} : AuthProviderProps) => {
 
   const signOut = async () => {
     await AsyncStorage.removeItem("@user");
-    setUser({
-      name : '',
-      email : '',
-      password : ''
-    })
+    setUser(null)
     console.log("não tem mais user setado")
   }
 
