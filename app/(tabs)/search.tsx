@@ -91,6 +91,7 @@ export default function Search() {
                   renderItem={({item,index}) => {
                     return(
                       <View key={index} style={{display : 'flex', flexDirection : 'column', padding : 5, height : 400, width : 300,justifyContent : 'flex-start', alignItems : 'center',marginTop : 15,borderWidth : 5,borderColor : '#4FC3F7', margin : 5,borderRadius : 15}}>
+                        
                         <Text style={{marginBottom : 12, fontSize : 20, fontWeight : 'bold',color : "#4FC3F7" }}>{response.length} encontrado</Text>
                         <Text style={{fontSize : 15,fontWeight : 'light', marginBottom : 10}}>nome : {item.name}</Text>
                         <Text style={{fontSize : 12, fontWeight : 'bold', marginBottom : 10}}>especialidade : {item.especialidade} </Text>

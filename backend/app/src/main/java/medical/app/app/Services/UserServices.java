@@ -29,6 +29,9 @@ public class UserServices {
         user.setName(userDTO.name());
         user.setEspecialidade(userDTO.especialidade());
         user.setPassword(userDTO.password());
+        if (userDTO.imageURL() != null) {
+            user.setImageURL(String.valueOf(userDTO.imageURL()));
+        }
 
         UserEntity userSaved = userRepositorie.save(user);
 
@@ -60,6 +63,9 @@ public class UserServices {
         existingUser.setEmail(dto.email());
         existingUser.setEspecialidade(dto.especialidade());
         existingUser.setPassword(dto.password());
+        if (dto.imageURL() != null) {
+            existingUser.setImageURL(String.valueOf(dto.imageURL()));
+        }
 
         return userRepositorie.save(existingUser);
     }

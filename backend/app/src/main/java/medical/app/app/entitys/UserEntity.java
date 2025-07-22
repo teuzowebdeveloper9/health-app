@@ -23,16 +23,21 @@ public class UserEntity {
     @Column
     private  String especialidade;
 
+    @Column
+    private String imageURL;
+
 
 
     public UserEntity() {
     }
 
-    public UserEntity(UUID id, String name, String email, String password) {
+    public UserEntity(UUID id, String name, String email, String password, String especialidade, String imageURL) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
+        this.especialidade = especialidade;
+        this.imageURL = imageURL;
     }
 
     public UUID getId() {
@@ -73,5 +78,13 @@ public class UserEntity {
 
     public void setEspecialidade(String especialidade) {
         this.especialidade = especialidade;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 }
