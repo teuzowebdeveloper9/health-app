@@ -20,6 +20,11 @@ public class UserEntity {
     @Column
     private  String password;
 
+    @Column
+    private  String especialidade;
+
+
+
     public UserEntity() {
     }
 
@@ -60,5 +65,13 @@ public class UserEntity {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getEspecialidade() {
+        return especialidade;
+    }
+
+    public void setEspecialidade(String especialidade) {
+        this.especialidade = especialidade;
     }
 }

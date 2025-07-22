@@ -27,6 +27,7 @@ public class UserServices {
 
         user.setEmail(userDTO.email());
         user.setName(userDTO.name());
+        user.setEspecialidade(userDTO.especialidade());
         user.setPassword(userDTO.password());
 
         UserEntity userSaved = userRepositorie.save(user);
@@ -57,6 +58,7 @@ public class UserServices {
 
         existingUser.setName(dto.name());
         existingUser.setEmail(dto.email());
+        existingUser.setEspecialidade(dto.especialidade());
         existingUser.setPassword(dto.password());
 
         return userRepositorie.save(existingUser);
