@@ -21,7 +21,7 @@ public class SearchHistoryController {
         return  service.saveSearch(userId,text);
     }
 
-    @GetMapping("/{userId")
+    @GetMapping("/{userId}")
     public List<SearchHistory> getHistory(@PathVariable UUID userId){
         return service.findSearchsById(userId);
     }
