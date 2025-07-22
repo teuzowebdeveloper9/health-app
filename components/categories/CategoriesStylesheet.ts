@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const CategoriesStylesheet = StyleSheet.create({
   FlatList: {
-    marginTop : 15,
+    marginTop : 10,
     paddingHorizontal: 10,
   },
   item: {
@@ -12,8 +12,11 @@ export const CategoriesStylesheet = StyleSheet.create({
     borderRadius: 20,
     marginRight: 10,
   },
+  itemSelected: {
+    backgroundColor: '#4FC3F7',
+  },
   title: {
-    color: 'white',
+    color: 'black',
     fontWeight: 'bold',
   },
 });

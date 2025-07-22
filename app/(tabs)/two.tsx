@@ -1,4 +1,5 @@
 import { CategoriesComponent } from "@/components/categories/CategoriesComponent";
+import { DoctorsComponents } from "@/components/doctors/DoctorsComponent";
 import { Header } from "@/components/Header/Header";
 import { NoLoginView } from "@/components/NoLogin/NoLoginComponents";
 import { AuthContext } from "@/context/loginContext";
@@ -27,6 +28,7 @@ export default function TabTwoScreen() {
      <ScrollView style={{flex : 1,backgroundColor : 'white'}}>
       <Header />
       <CategoriesComponent />
+      <DoctorsComponents />
      </ScrollView>
   );
 }

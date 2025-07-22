@@ -4,13 +4,21 @@ import { CategoriesStylesheet } from "./CategoriesStylesheet";
 import { useState } from "react";
 
 export function CategoriesComponent() {
-  const [selected, setSelected] = useState(0)
+  const [selected, setSelected] = useState(0);
 
-  const RenderItem = ({ titulo } : string) => (
-    <TouchableOpacity style={CategoriesStylesheet.item}>
+  const RenderItem = ({ titulo, index }: { titulo: string; index: number }) => (
+    <TouchableOpacity
+      style={[
+        CategoriesStylesheet.item,
+        selected === index && CategoriesStylesheet.itemSelected,
+      ]}
+      onPress={() => setSelected(index)}
+    >
       <Text style={CategoriesStylesheet.title}>{titulo}</Text>
     </TouchableOpacity>
   );
+
+  console.log("Selecionado:", selected);
 
   return (
     <View>
@@ -20,7 +28,9 @@ export function CategoriesComponent() {
         style={CategoriesStylesheet.FlatList}
         showsHorizontalScrollIndicator={false}
         keyExtractor={(item, index) => index.toString()}
-        renderItem={({ item }) => <RenderItem {...item} />}
+        renderItem={({ item, index }) => (
+          <RenderItem titulo={item.titulo} index={index} />
+        )}
       />
     </View>
   );
