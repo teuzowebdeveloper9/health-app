@@ -25,4 +25,11 @@ public class SearchHistoryService {
     public List<SearchHistory> findSearchsById(UUID userId){
         return  repository.findByUserId(userId);
     }
+
+    public void deleseSearch( String id){
+        SearchHistory deleteSearch = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("search not found") );
+
+        repository.delete(deleteSearch);
+    }
 }

@@ -1,4 +1,5 @@
 import { Button } from "@/components/Button/Button";
+import { ExcludeModalComponent } from "@/components/excludeModal/excludeModalComponent";
 import { ModalSearchComponent } from "@/components/ModalSearch/ModalSearchComponent";
 import { NoLoginView } from "@/components/NoLogin/NoLoginComponents";
 import { SearchBarStylesheet } from "@/components/SearchBar/SearchBarStylesheet";
@@ -15,6 +16,7 @@ export default function Search() {
   const { user } = useContext(AuthContext)
 
     const [isModalVisible, setIsModalVisible] = useState(false);
+    const [isExcludeModalVisible, setIsExcludeModalVisible] = useState(false)
   
 
    if (user === null) {
@@ -67,12 +69,16 @@ export default function Search() {
              <Text onPress={() => setIsModalVisible(true)} style={SearchScreenStylesheet.TextButton}>recent searches</Text>
           </View>
           <View style={SearchScreenStylesheet.ExcludeView}>
-             <Text style={SearchScreenStylesheet.TextButton}>exclude searches</Text>
+             <Text style={SearchScreenStylesheet.TextButton} onPress={() => setIsExcludeModalVisible(true)}>exclude searches</Text>
           </View>
       </View>
      <ModalSearchComponent
         isVisible={isModalVisible}
         onClose={() => setIsModalVisible(false)}
+      />
+      <ExcludeModalComponent 
+       isVisible={isExcludeModalVisible}
+       onClose={() => setIsExcludeModalVisible(false)}
       />
       {response.length > 0 && (
             

@@ -2,6 +2,7 @@ package medical.app.app.controllers;
 
 import medical.app.app.Services.SearchHistoryService;
 import medical.app.app.entitys.SearchHistory;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,5 +26,12 @@ public class SearchHistoryController {
     @GetMapping("/{userId}")
     public List<SearchHistory> getHistory(@PathVariable UUID userId){
         return service.findSearchsById(userId);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteSearch(@PathVariable  String id){
+         service.deleseSearch(id);
+
+         return ResponseEntity.noContent().build();
     }
 }

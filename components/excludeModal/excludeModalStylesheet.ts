@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
 
-export const ModalSearchStylesheet = StyleSheet.create({
+export const ExcludeModalStylesheet = StyleSheet.create({
   FullscreenOverlay: {
     position: "absolute",
     top: 0,
@@ -25,7 +25,7 @@ export const ModalSearchStylesheet = StyleSheet.create({
     backgroundColor: "white",
     width: 300,
     borderRadius: 12,
-    borderColor: "#4FC3F7",
+    borderColor: "red",
     borderWidth: 2,
     padding: 20,
   },
@@ -35,16 +35,19 @@ export const ModalSearchStylesheet = StyleSheet.create({
     alignItems: "center",
   },
   Title: {
-    color: "#4FC3F7",
+    color: "red",
     fontSize: 18,
     fontWeight: "bold",
+    
   },
   ScrollView : {
     height : 150
   },
   Search : {
-    color : "#4FC3F7",
+    color : "red",
     fontSize : 12,
-    fontWeight : 'bold'  
+    fontWeight : 'bold',
+    margin : 20,
+    padding : 5  
   }
 });
