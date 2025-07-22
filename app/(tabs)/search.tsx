@@ -1,4 +1,5 @@
 import { Button } from "@/components/Button/Button";
+import { ModalSearchComponent } from "@/components/ModalSearch/ModalSearchComponent";
 import { NoLoginView } from "@/components/NoLogin/NoLoginComponents";
 import { SearchBarStylesheet } from "@/components/SearchBar/SearchBarStylesheet";
 import { AuthContext } from "@/context/loginContext";
@@ -12,6 +13,9 @@ import { TextInput, View,Text, FlatList } from "react-native";
 export default function Search() {
 
   const { user } = useContext(AuthContext)
+
+    const [isModalVisible, setIsModalVisible] = useState(false);
+  
 
    if (user === null) {
       return (
@@ -32,13 +36,13 @@ export default function Search() {
 
    const response = await axios.get(`http://localhost:8080/users/search/${SearchedName}`)
 
+   const saveSearch = await axios.post(
+  `http://localhost:8080/search-history/?userId=${user.id}&text=${SearchedName}`
+);
+
    const data = response.data
 
-    console.log(data)
-
-    setResponse(data)
-
-    
+    setResponse(data)    
   }
 
   return (
@@ -60,12 +64,16 @@ export default function Search() {
     </View>
     <View style={{display : 'flex',flexDirection:'row',justifyContent : "space-around"}}>
           <View style={SearchScreenStylesheet.RecentView}>
-             <Text style={SearchScreenStylesheet.TextButton}>recent searches</Text>
+             <Text onPress={() => setIsModalVisible(true)} style={SearchScreenStylesheet.TextButton}>recent searches</Text>
           </View>
           <View style={SearchScreenStylesheet.ExcludeView}>
              <Text style={SearchScreenStylesheet.TextButton}>exclude searches</Text>
           </View>
       </View>
+     <ModalSearchComponent
+        isVisible={isModalVisible}
+        onClose={() => setIsModalVisible(false)}
+      />
       {response.length > 0 && (
             
 
@@ -88,7 +96,9 @@ export default function Search() {
                       </View>
                     )
                   }}
+                  
                 />
+                
           )
           }
     </>

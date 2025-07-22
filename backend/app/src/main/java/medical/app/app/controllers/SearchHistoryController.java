@@ -9,6 +9,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/search-history")
+@CrossOrigin(origins = "http://localhost:8081")
 public class SearchHistoryController {
     private final SearchHistoryService service;
 

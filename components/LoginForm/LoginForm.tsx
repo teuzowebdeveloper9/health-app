@@ -81,12 +81,15 @@ export default function LoginFormComponent({onPress,isLogin} : LoginFormProps){
      const name = response?.data.name
      const email = response?.data.email
      const password = response?.data.password
+     const id = response?.data.id
+
 
 
          signIn({
       name,
       email,
-      password
+      password,
+      id
      })
 
         Router.push('/two')
@@ -105,7 +108,8 @@ export default function LoginFormComponent({onPress,isLogin} : LoginFormProps){
        signIn({
        name,
        email,
-       password
+       password,
+       id
       })
 
         Router.push('/two')

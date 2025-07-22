@@ -1,7 +1,11 @@
 import { DoutoresHospitalFicticio } from "@/constants/DoctorsList";
+import { AuthContext } from "@/context/loginContext";
+import { useContext } from "react";
 import { FlatList, Image, Text, View } from "react-native";
 
 export function DoctorsComponents(){
+    const {signOut} = useContext(AuthContext)
+
   return (
     <>
     <View style={{display : 'flex',flexDirection : 'row',justifyContent : 'space-around',marginTop : 10}}>
@@ -16,8 +20,9 @@ export function DoctorsComponents(){
         renderItem={({item}) => {
           return(
            <View style={{display : 'flex', flexDirection : 'column', padding : 5, height : 400, width : 200,justifyContent : 'flex-start', alignItems : 'center',marginTop : 15,borderWidth : 5,borderColor : '#4FC3F7', margin : 5,borderRadius : 15}}>
-                  <Text style={{fontWeight : 'bold',color : 'black',marginTop : 8}}>{item.nome}</Text>
+                  <Text onPress={() => signOut()} style={{fontWeight : 'bold',color : 'black',marginTop : 8}}>{item.nome}</Text>
                   <Image
+                  
                    source={{uri : item.foto}}
                    style={{ marginTop : 10,width: 100, height: 100, borderRadius: 50 }}
                   />
