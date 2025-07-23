@@ -2,5 +2,6 @@ export type SearchResponseAPI = {
   email : string,
   id : string,
   name : string,
-  especialidade : string
+  especialidade : string,
+  imageURL : string
 }

@@ -82,6 +82,8 @@ export default function LoginFormComponent({onPress,isLogin} : LoginFormProps){
      const email = response?.data.email
      const password = response?.data.password
      const id = response?.data.id
+     const imageURL = response?.data.imageURL
+
 
 
 
@@ -89,7 +91,8 @@ export default function LoginFormComponent({onPress,isLogin} : LoginFormProps){
       name,
       email,
       password,
-      id
+      id,
+      imageURL
      })
 
         Router.push('/two')
@@ -104,12 +107,15 @@ export default function LoginFormComponent({onPress,isLogin} : LoginFormProps){
       const name = responseSignin?.data.name
       const email = responseSignin?.data.email
       const password = responseSignin?.data.email
+      const id = responseSignin?.data.id
+     const imageURL = responseSignin?.data.imageURL
 
        signIn({
        name,
        email,
        password,
-       id
+       id,
+       imageURL
       })
 
         Router.push('/two')

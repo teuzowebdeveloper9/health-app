@@ -24,7 +24,8 @@ export const AuthProvider = ({children} : AuthProviderProps) => {
     loadUser()
   } , [] )
 
-  const signIn = async (user : {name : string, email : string, password : string, id : string}) => {
+  const signIn = async (user : {name : string, email : string, password : string, id : string,imageURL : string}) => {
+
     await AsyncStorage.setItem("@user", JSON.stringify(user))
     setUser(user)
   }

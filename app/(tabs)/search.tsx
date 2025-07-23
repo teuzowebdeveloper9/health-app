@@ -6,14 +6,15 @@ import { SearchBarStylesheet } from "@/components/SearchBar/SearchBarStylesheet"
 import { AuthContext } from "@/context/loginContext";
 import { SearchScreenStylesheet } from "@/stylesheets/SearchStylesheets";
 import { SearchResponseAPI } from "@/types/SearchResponseAPI";
+import { unwrapOptionalString } from "@/utils/unwrapUrl";
 import { Feather } from "@expo/vector-icons";
 import axios from "axios";
 import { useContext, useState } from "react";
-import { TextInput, View,Text, FlatList } from "react-native";
+import { TextInput, View,Text, FlatList, Image } from "react-native";
 
 export default function Search() {
 
-  const { user } = useContext(AuthContext)
+  const { user,signOut } = useContext(AuthContext)
 
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [isExcludeModalVisible, setIsExcludeModalVisible] = useState(false)
@@ -91,8 +92,12 @@ export default function Search() {
                   renderItem={({item,index}) => {
                     return(
                       <View key={index} style={{display : 'flex', flexDirection : 'column', padding : 5, height : 400, width : 300,justifyContent : 'flex-start', alignItems : 'center',marginTop : 15,borderWidth : 5,borderColor : '#4FC3F7', margin : 5,borderRadius : 15}}>
-                        
-                        <Text style={{marginBottom : 12, fontSize : 20, fontWeight : 'bold',color : "#4FC3F7" }}>{response.length} encontrado</Text>
+
+                        <Text onPress={() => signOut()} style={{marginBottom : 12, fontSize : 20, fontWeight : 'bold',color : "#4FC3F7" }}>{response.length} encontrado</Text>
+                          <Image
+                          source={{uri : unwrapOptionalString(item.imageURL)}}
+                          style={{ marginTop : 10,width: 100, height: 100, borderRadius: 50 , marginBottom : 15}}
+                          />
                         <Text style={{fontSize : 15,fontWeight : 'light', marginBottom : 10}}>nome : {item.name}</Text>
                         <Text style={{fontSize : 12, fontWeight : 'bold', marginBottom : 10}}>especialidade : {item.especialidade} </Text>
                         <Text style={{fontSize : 12,fontWeight : 'bold',marginTop : 10, marginBottom : 10}}>id : {item.id}</Text>

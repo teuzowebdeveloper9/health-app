@@ -4,5 +4,5 @@ export type User = {
   name: string;
   email: string;
   password: string;
-  URLimage? : string;
+  imageURL? : string;
 };
