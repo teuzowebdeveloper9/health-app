@@ -1,7 +1,7 @@
 import LoginFormComponent from "@/components/LoginForm/LoginForm";
 import { AuthContext } from "@/context/loginContext";
 import { styles } from "@/stylesheets/HomeStylesheets";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Image, ImageBackground, ScrollView, Text, View } from "react-native";
 import medical from '../../images/download.png'
 import imageBackground from '../../images/360_F_240635575_EJifwRAbKsVTDnA3QE0bCsWG5TLhUNEZ.jpg'
@@ -10,14 +10,17 @@ import  ProfileComponent  from '@/components/profile/ProfileComponent';
 
 export default function TabOneScreen() {
   const [login, setLogin] = useState(false);
-  const { user } = useContext(AuthContext);
+  
 
   const polarity = () => {
     setLogin(prev => !prev);
   };
+ 
+    const {user, signOut} = useContext(AuthContext)
+
 
   return user ? (
-    <ProfileComponent />
+    <ProfileComponent signOut={signOut}  user={user}/>
   ) : (
     <ScrollView style={styles.container}>
       <ImageBackground style={styles.ImageBackground} source={imageBackground}>

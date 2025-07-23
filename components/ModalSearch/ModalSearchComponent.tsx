@@ -6,14 +6,11 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "@/context/loginContext";
 import { SearchHistory } from "@/types/SearchHistoryType";
-import { ScrollView } from "react-native";
+import { ModalSearchType } from "@/types/ModalSearchType";
 
-type MyComponentProps = {
-  isVisible: boolean;
-  onClose: () => void;
-};
 
-export function ModalSearchComponent({ isVisible, onClose }: MyComponentProps) {
+
+export function ModalSearchComponent({ isVisible, onClose }: ModalSearchType) {
   const { user } = useContext(AuthContext);
   const [data, setData] = useState<SearchHistory[]>([]);
 

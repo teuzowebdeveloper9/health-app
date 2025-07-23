@@ -10,10 +10,12 @@ export const ProfileStylesheet = StyleSheet.create({
   box : {
     height : 400,
     width : 300,
-    backgroundColor: '#e6d9d9ff',
+    backgroundColor: '#ffffffff',
     borderRadius : 10,
     justifyContent : 'center',
-    alignItems : "center"
+    alignItems : "center",
+    borderWidth : 2,
+    borderColor : "#4FC3F7"
   },
   name : {
     color : "#4FC3F7",
@@ -37,6 +39,15 @@ export const ProfileStylesheet = StyleSheet.create({
   excludeButton : {
     margin: 15,
     backgroundColor : 'red',
+    width : 100,
+    height : 30,
+    borderRadius : 10,
+    justifyContent : 'center',
+    alignItems : 'center'
+  },
+  editButton : {
+    margin: 15,
+    backgroundColor : '#4FC3F7',
     width : 100,
     height : 30,
     borderRadius : 10,
