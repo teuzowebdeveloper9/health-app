@@ -13,6 +13,7 @@ This React Native application is designed for booking medical appointments. It s
 - React Native Async Storage
 - Java (Backend)
 - Docker
+- typescript
 
 ## Key Features
 
@@ -46,6 +47,21 @@ While the current version of the app is functional, there are plans for future i
 ## Note
 
 Development is currently paused due to other commitments, but work will resume to implement these exciting new features when time permits.
+
+## screenshots 
+
+<img width="198" height="426" alt="image" src="https://github.com/user-attachments/assets/b07a3856-6bb1-4042-b9d7-b80107645b04" />
+<img width="207" height="429" alt="image" src="https://github.com/user-attachments/assets/ee191557-adba-4d8a-849f-919eafa6ee0d" />
+<img width="201" height="427" alt="image" src="https://github.com/user-attachments/assets/55662e2a-3e03-433d-abbc-0393a94252e9" />
+<img width="200" height="433" alt="image" src="https://github.com/user-attachments/assets/8399e690-4581-42ef-8366-af1d7783fd53" />
+<img width="200" height="429" alt="image" src="https://github.com/user-attachments/assets/2f4451f5-82f8-4222-9f88-7a69e9a8f0ad" />
+<img width="204" height="434" alt="image" src="https://github.com/user-attachments/assets/e05e1021-c01b-47e2-a8e9-d36cc787048e" />
+<img width="195" height="427" alt="image" src="https://github.com/user-attachments/assets/d40daae6-b0b5-4fd1-8809-9d37bc960146" />
+<img width="207" height="444" alt="image" src="https://github.com/user-attachments/assets/e815409a-ebc2-4faa-ac1e-e161fb24ce0b" />
+<img width="208" height="432" alt="image" src="https://github.com/user-attachments/assets/07f51766-e588-48e7-811d-5b12a0adf841" />
+
+<img width="1366" height="709" alt="image" src="https://github.com/user-attachments/assets/f25b9872-b904-4d7b-8ec8-d786a2ddc8d7" />
+
 
 ## Conclusion
 
