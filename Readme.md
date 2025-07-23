@@ -15,6 +15,7 @@ This React Native application is designed for booking medical appointments. It s
 - Docker
 - typescript
 - axios
+- mongodb compass
 
 ## Key Features
 
