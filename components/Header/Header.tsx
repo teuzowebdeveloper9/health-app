@@ -14,8 +14,13 @@ export function Header(){
 
   return(
     <View style={HeaderStylesheet.container}>
-      <View style={HeaderStylesheet.profile}>
-           <Image style={HeaderStylesheet.Image} source={{uri : unwrapOptionalString(user?.imageURL)} } />
+      <View style={HeaderStylesheet.profile}> 
+         <Image style={HeaderStylesheet.Image}  source={
+    user?.imageURL
+      ? { uri: unwrapOptionalString(user.imageURL) }
+      : noPhotoProfile
+  } />
+         
            <View style={HeaderStylesheet.bio}>
               <Text style={HeaderStylesheet.textWelcome}>hello, welcome 🎉 <Feather style={HeaderStylesheet.bell}  name="bell" color="white" size={25} /></Text>
               <Text style={HeaderStylesheet.textWelcome}>{user?.name}</Text>

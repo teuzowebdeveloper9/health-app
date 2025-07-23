@@ -10,7 +10,7 @@ export const NoLoginStylesheet = StyleSheet.create({
     backgroundColor : 'black'
   },
   Text : {
-    fontSize: 22,
+    fontSize: 15,
     fontWeight : 'bold',
     color : 'red',
     marginBottom : 20,

@@ -100,9 +100,6 @@ export default function LoginFormComponent({onPress,isLogin} : LoginFormProps){
     } else {
       const responseSignin = await handleSignin(form.name, form.email, form.password);
 
-     
-     
-
       if(responseSignin?.status == 201){
       const name = responseSignin?.data.name
       const email = responseSignin?.data.email
@@ -124,8 +121,6 @@ export default function LoginFormComponent({onPress,isLogin} : LoginFormProps){
   }}>
            <Button label={isLogin ? 'login' : 'sign in'} />
           </Pressable>
-        
-
     </View>
   )
 }
