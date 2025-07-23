@@ -14,6 +14,7 @@ This React Native application is designed for booking medical appointments. It s
 - Java (Backend)
 - Docker
 - typescript
+- axios
 
 ## Key Features
 
