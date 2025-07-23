@@ -59,6 +59,8 @@ Development is currently paused due to other commitments, but work will resume t
 <img width="195" height="427" alt="image" src="https://github.com/user-attachments/assets/d40daae6-b0b5-4fd1-8809-9d37bc960146" />
 <img width="207" height="444" alt="image" src="https://github.com/user-attachments/assets/e815409a-ebc2-4faa-ac1e-e161fb24ce0b" />
 <img width="208" height="432" alt="image" src="https://github.com/user-attachments/assets/07f51766-e588-48e7-811d-5b12a0adf841" />
+<img width="206" height="434" alt="image" src="https://github.com/user-attachments/assets/c2d1cadb-578b-42ec-8d17-ed16bcfa9b68" />
+
 
 <img width="1366" height="709" alt="image" src="https://github.com/user-attachments/assets/f25b9872-b904-4d7b-8ec8-d786a2ddc8d7" />
 
